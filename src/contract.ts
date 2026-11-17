@@ -2,10 +2,10 @@ import {createClient} from 'genlayer-js';
 import {studioDevnet} from 'genlayer-js/chains';
 import {TransactionHashVariant} from 'genlayer-js/types';
 import {z} from 'zod';
-const expectedAddress='0x82E719fa84d242211847be5CfeBB1fa72e87bd2D' as const;
+const expectedAddress='0xd4efFc3B03B830c7a60e47769F2b41596B808a55' as const;
 const addressEnv=import.meta.env.VITE_METRIC_CONSENSUS_ADDRESS as string|undefined;const chainEnv=import.meta.env.VITE_GENLAYER_CHAIN_ID as string|undefined;
 if(addressEnv&&addressEnv.toLowerCase()!==expectedAddress.toLowerCase())throw Error('Configured contract address is not the verified PULSE contract.');if(chainEnv&&chainEnv!=='61997')throw Error('PULSE requires Studio Dev chain 61997.');
-export const CONFIG={address:expectedAddress,chainId:'0xf22d',rpc:'https://studio-dev.genlayer.com/api',explorer:'https://explorer-studio-next.genlayer.com/address/0x82E719fa84d242211847be5CfeBB1fa72e87bd2D',txExplorer:'https://explorer-studio-dev.genlayer.com/tx/'};
+export const CONFIG={address:expectedAddress,chainId:'0xf22d',rpc:'https://studio-dev.genlayer.com/api',explorer:'https://explorer-studio-next.genlayer.com/address/0xd4efFc3B03B830c7a60e47769F2b41596B808a55',txExplorer:'https://explorer-studio-dev.genlayer.com/tx/'};
 export type Provider={request:(v:{method:string;params?:unknown[]|object})=>Promise<unknown>;on?:(event:string,fn:(v:unknown)=>void)=>void;removeListener?:(event:string,fn:(v:unknown)=>void)=>void;isMetaMask?:boolean;providers?:Provider[]};
 declare global{interface Window{ethereum?:Provider}}
 export const client=createClient({chain:studioDevnet});
